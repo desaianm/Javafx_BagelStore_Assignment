@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="411.0" prefWidth="497.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalproject.FXMLDocumentController">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <Separator layoutY="199.0" prefHeight="9.0" prefWidth="244.0" />
+      <AnchorPane id="AnchorPane" layoutY="-1.0" prefHeight="470.0" prefWidth="499.0" style="-fx-color: white; -fx-background-color: black; -fx-border-width: 1px; -fx-border-style: solid; -fx-text-fill: white;">
+         <children>
+            <Separator layoutX="305.0" layoutY="225.0" prefHeight="3.0" prefWidth="191.0">
+               <opaqueInsets>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </opaqueInsets>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Separator>
+            <MenuButton layoutX="22.0" layoutY="14.0" mnemonicParsing="false" text="Menu">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#Print_File" text="Print File" />
+                  <MenuItem mnemonicParsing="false" onAction="#Print_Receipt" text="Print Receipt" />
+                  <MenuItem mnemonicParsing="false" onAction="#calculatetotalbtn" text="Calculate Total" />
+                  <MenuItem mnemonicParsing="false" onAction="#resetbtn" text="Reset Form" />
+                  <MenuItem mnemonicParsing="false" onAction="#exitbutton" text="Exit" />
+              </items>
+            </MenuButton>
+            <Separator layoutX="244.0" layoutY="-5.0" orientation="VERTICAL" prefHeight="200.0" />
+            <Separator layoutX="244.0" layoutY="193.0" orientation="VERTICAL" prefHeight="214.0" prefWidth="6.0" />
+            <Label layoutX="7.0" layoutY="185.0" prefHeight="17.0" prefWidth="128.0" style="-fx-text-fill: white;" text="Choose Toppings">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="check_cheese" layoutX="25.0" layoutY="226.0" mnemonicParsing="false" onAction="#cheesecheck" prefHeight="17.0" prefWidth="108.0" style="-fx-text-fill: white;" text="Cheese ($ 0.50 )" />
+            <CheckBox fx:id="check_butter" layoutX="25.0" layoutY="251.0" mnemonicParsing="false" onAction="#buttercheck" prefHeight="17.0" prefWidth="108.0" style="-fx-text-fill: white;" text="Butter ($ 0.25)" />
+            <CheckBox fx:id="check_blue" layoutX="25.0" layoutY="277.0" mnemonicParsing="false" onAction="#blueberrycheck" prefHeight="17.0" prefWidth="140.0" style="-fx-text-fill: white;" text="BlueBerry Jam ($0.75)" />
+            <CheckBox fx:id="check_ras" layoutX="25.0" layoutY="300.0" mnemonicParsing="false" onAction="#checkras" prefHeight="17.0" prefWidth="140.0" style="-fx-text-fill: white;" text="Rasberry Jam ($ 0.75)" />
+            <CheckBox fx:id="check_peach" layoutX="25.0" layoutY="324.0" mnemonicParsing="false" onAction="#peachcheck" prefHeight="17.0" prefWidth="140.0" style="-fx-text-fill: white;" text="Peach Jelly ($ 0.75)" />
+            <Separator layoutY="404.0" prefHeight="3.0" prefWidth="497.0" />
+            <Button layoutX="125.0" layoutY="432.0" mnemonicParsing="false" onAction="#calculatetotalbtn" style="-fx-background-color: lightgreen;" text="Calculate Total" />
+            <Button layoutX="247.0" layoutY="432.0" mnemonicParsing="false" onAction="#resetbtn" style="-fx-background-color: lightgreen;" text="Reset Form" />
+            <Button layoutX="428.0" layoutY="432.0" mnemonicParsing="false" onAction="#exitbutton" prefHeight="25.0" prefWidth="46.0" style="-fx-background-color: lightgreen;" text="Exit" />
+            <Separator layoutX="133.0" layoutY="194.0" prefHeight="3.0" prefWidth="108.0" />
+            <Label layoutX="256.0" layoutY="213.0" prefHeight="27.0" prefWidth="46.0" style="-fx-text-fill: white;" text="Price">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="279.0" layoutY="258.0" prefHeight="17.0" prefWidth="53.0" style="-fx-text-fill: white;" text="Subtotal">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="280.0" layoutY="299.0" prefHeight="17.0" prefWidth="53.0" style="-fx-text-fill: white;" text="Tax">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="284.0" layoutY="344.0" prefHeight="17.0" prefWidth="46.0" style="-fx-text-fill: white;" text="Total">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="subtotaldisplay" layoutX="352.0" layoutY="256.0" prefHeight="25.0" prefWidth="76.0" />
+            <TextField fx:id="totaldisplay" layoutX="352.0" layoutY="341.0" prefHeight="25.0" prefWidth="76.0" />
+            <TextField fx:id="taxdisplay" layoutX="352.0" layoutY="296.0" prefHeight="25.0" prefWidth="76.0" />
+            <TitledPane animated="false" layoutX="285.0" layoutY="37.0" prefHeight="169.0" prefWidth="184.0" text="Want Coffee with that">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: black;">
+                     <children>
+                        <RadioButton fx:id="radio_none" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="140.0" style="-fx-text-fill: white;" text="None" />
+                        <RadioButton fx:id="radio_coff" layoutX="14.0" layoutY="50.0" mnemonicParsing="false" onAction="#radiocoffee" prefHeight="17.0" prefWidth="140.0" style="-fx-text-fill: white;" text="Coffee ($ 1.25)" />
+                        <RadioButton fx:id="radio_cappu" layoutX="14.0" layoutY="79.0" mnemonicParsing="false" onAction="#radioCappucino" prefHeight="17.0" prefWidth="140.0" style="-fx-text-fill: white;" text="Cappucino ($ 2.25)" />
+                        <RadioButton fx:id="radio_cafe" layoutX="14.0" layoutY="111.0" mnemonicParsing="false" onAction="#radiocafeau" prefHeight="17.0" prefWidth="140.0" style="-fx-text-fill: white;" text="Cafe Au Lait ($ 1.50 )" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" layoutX="17.0" layoutY="53.0" prefHeight="125.0" prefWidth="202.0" style="-fx-background-color: black;" text="Select a Bagel">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: black;">
+                     <children>
+                        <RadioButton fx:id="radio_white" layoutX="30.0" layoutY="56.0" mnemonicParsing="false" onAction="#radiowhite" prefHeight="17.0" prefWidth="140.0" style="-fx-text-fill: white;" text="White  ($ 1.25 )" />
+                        <RadioButton fx:id="radio_wheat" layoutX="30.0" layoutY="22.0" mnemonicParsing="false" onAction="#radiowholewheat" prefHeight="17.0" prefWidth="148.0" style="-fx-text-fill: white;" text="Whole Wheat ($ 1.50)" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <Button layoutX="343.0" layoutY="432.0" mnemonicParsing="false" onAction="#Print_File" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: lightgreen;" text="Print File" />
+            <Button layoutX="28.0" layoutY="432.0" mnemonicParsing="false" onAction="#Print_Receipt" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: lightgreen;" text="Print Receipt" />
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>
